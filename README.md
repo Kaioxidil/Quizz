@@ -10,7 +10,7 @@
 
 
 
-##### Trabalho feito por:
+### Trabalho feito por:
 Gaby
 Kaio
 Sarah
