@@ -7,100 +7,114 @@
 
     <style>
 
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        body{
+        body {
             height: 100vh;
+            background-color: #f0f8ff;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             flex-direction: column;
-            background-color: rgb(237, 237, 237);
-           
         }
 
-        form{
-            width: 300px;
-            margin: 200px auto;
-            margin-left: 38%;
-            
-        }
-
-        form h3{
-            margin-left: 50%;
-        }
-
-
-        input{
-            display: block;
-            margin: 10px auto;
-            width: 350px;
-            height: 30px;
-            text-align: center;
+        .login-container {
+            background-color: white;
+            padding: 40px;
             border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h3 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+        }
+
+        #button {
+            width: 100%;
+            padding: 12px;
             border: none;
+            border-radius: 25px;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        a{
-           text-decoration: none;
-           font-weight: bold;
-           font-size: 16px;
-           padding: 10px 20px;
-           border-radius: 10px;
-           color: rgb(43, 43, 43);
-           background-color: rgb(228, 200, 255);
+        #button:hover {
+            background-color: #0056b3;
         }
 
-        #button{
-            background-color: rgb(228, 200, 255);
-            width: 200px;
-            margin-left: 25%;
-            color: rgb(43, 43, 43);
+        .back-link {
+            margin-top: 15px;
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #0056b3;
         }
 
     </style>
 
 </head>
 <body>
-    
-    
 
-    <form>
-
+    <div class="login-container">
         <h3>Login</h3>
-        <input type="text" placeholder="Login" id="login">
-        <input type="password" placeholder="Senha" id="senha">
-        <input type="submit" onclick="logar(); return false" id="button">
+        <p>Ambos: admin</p>
+        <form>
 
-       
-
-    </form>
-    <a href="../index.html" >Voltar</a>
-    
-    
+            <input type="text" placeholder="Login" id="login" required>
+            <input type="password" placeholder="Senha" id="senha" required>
+            <input type="submit" value="Entrar" onclick="logar(); return false" id="button">
+        </form>
+        <a href="../index.html" class="back-link">Voltar</a>
+    </div>
 
     <script>
-
-
         function logar(){
-
             var login = document.getElementById('login').value;
             var senha = document.getElementById('senha').value;
 
-            if(login == "admin" && senha == "admin"){
-                alert('Sucesso');
+            if(login === "admin" && senha === "admin"){
+                alert('Login realizado com sucesso!');
                 location.href = "app.html";
-            }else{
-                alert('Usuario ou senha incorretos');
+            } else {
+                alert('Usuário ou senha incorretos.');
             }
-
         }
-
     </script>
+
 
 </body>
 </html>
